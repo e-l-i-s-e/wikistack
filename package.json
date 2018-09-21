@@ -1,0 +1,31 @@
+{
+  "name": "wikistack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon /Users/elisebonner/Dropbox/Coding/Bootcamp/wikistack/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e-l-i-s-e/wikistack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/e-l-i-s-e/wikistack/issues"
+  },
+  "homepage": "https://github.com/e-l-i-s-e/wikistack#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "html-template-tag": "^2.0.0",
+    "morgan": "^1.9.1",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.38.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
