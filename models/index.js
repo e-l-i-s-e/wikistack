@@ -20,6 +20,8 @@ const Page = db.define('pages', {
   status: Sequelize.ENUM('open', 'closed'),
 })
 
+// test
+
 Page.beforeValidate((pageInstance) => {
   pageInstance.slug = pageInstance.title.replace(/\s+/g, '_').replace(/\W/g, '')
 })
