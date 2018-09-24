@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon /Users/elisebonner/Dropbox/Coding/Bootcamp/wikistack/app.js"
+    "start": "nodemon /Users/elisebonner/Dropbox/Coding/Bootcamp/wikistack/server.js"
   },
   "repository": {
     "type": "git",

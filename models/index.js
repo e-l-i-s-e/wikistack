@@ -4,7 +4,7 @@ const db = new Sequelize('postgres://localhost:5432/wikistack', {
 });
 
 
-const Page = db.define('pages', {
+const Page = db.define('page', {
   title: {
     type: Sequelize.STRING,
     allowNull: false
@@ -22,15 +22,13 @@ const Page = db.define('pages', {
 
 // test
 
-Page.beforeValidate((pageInstance) => {
-  pageInstance.slug = pageInstance.title.replace(/\s+/g, '_').replace(/\W/g, '')
+Page.beforeValidate((page) => {
+  if(!page.slug){
+    page.slug = page.title.replace(/\s+/g, '_').replace(/\W/g, '').toLowerCase();
+  }
 })
-// Page.addHook('beforeValidate', (pages,options) =>{
-//   pages.slug = pages.title.replace(/\s+/g, '_').replace(/\W/g, ''),
-//   pages.content=content,
-// })
 
-const User = db.define('users', {
+const User = db.define('user', {
   name: {
     type: Sequelize.STRING,
     allowNull: false
@@ -44,6 +42,9 @@ const User = db.define('users', {
   }
 })
 
+Page.belongsTo(User, {as: 'author'})
+User.hasMany(Page, {foreignKey : 'authorId'})
+
 module.exports = {
-  Page, User, db
-}
+  db, Page, User
+};

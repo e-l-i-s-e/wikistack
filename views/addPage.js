@@ -21,19 +21,23 @@ module.exports = () => layout(html`
     <div class="form-group">
       <label for="title" class="col-sm-2 control-label">Page Title</label>
       <div class="col-sm-10">
-        <input id="title" name="title" type="text" class="form-control"/>
+        <input id="title" name="title" type="text" class= "form-control"/>
       </div>
     </div>
     <div class="form-group">
       <label for="content" class="col-sm-2 control-label">Content</label>
       <div class="col-sm-10">
-        <input id="content" name='content' type="text" class="form-control"/>
+        <textarea name="content" ></textarea>
       </div>
     </div>
+
     <div class="form-group">
-      <label for="submit" class="col-sm-2 control-label">Status</label>
+      <label for="status" class="col-sm-2 control-label">Status</label>
       <div class="col-sm-10">
-        <input id="status" name='status' type="text" class="form-control"/>
+        <select name='status'>
+        <option>open</option>
+        <option>closed </option>
+        </select>
       </div>
     </div>
 
